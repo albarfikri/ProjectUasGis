@@ -10,6 +10,7 @@
   <script src="<?= base_url('assets/assets/vendor/chart.js/dist/Chart.extension.js'); ?>"></script>
   <!-- Argon JS -->
   <script src="<?= base_url('assets/assets/js/argon.js?v=1.2.0'); ?>"></script>
+  
   </body>
 
   </html>

@@ -32,6 +32,8 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/assets/css/argon.css?v=1.2.0'); ?>" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -51,19 +53,19 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->uri_string() == 'Dashboard') { echo 'active'; } ?>" href="<?= base_url('Dashboard'); ?>">
-                <i class="ni ni-tv-2 text-primary"></i>
+                <i class="ni ni-tv-2 text-default"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->uri_string() == 'Hotel') { echo 'active'; } ?>" href="<?= base_url('Hotel'); ?>">
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-map-big text-primary"></i>
                 <span class="nav-link-text">Map Hotel</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">
-                <i class="ni ni-single-02 text-yellow"></i>
+              <a class="nav-link <?php if($this->uri->uri_string() == 'Pemetaan') { echo 'active'; } ?>" href="<?= base_url('Pemetaan'); ?>">
+                <i class="ni ni-pin-3 text-red"></i>
                 <span class="nav-link-text">Profile</span>
               </a>
             </li>
@@ -93,7 +95,13 @@
             <li class="nav-item">
               <a class="nav-link active active-pro" href="upgrade.html">
                 <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">Project Uas GIS  </span>
+                <span class="nav-link-text">Project Uas GIS</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active active-pro" href="upgrade.html">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Project Uas GIS</span>
               </a>
             </li>
           </ul>
