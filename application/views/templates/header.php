@@ -33,6 +33,7 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/assets/css/argon.css?v=1.2.0'); ?>" type="text/css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 
@@ -59,20 +60,20 @@
             </li>
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->uri_string() == 'Hotel') { echo 'active'; } ?>" href="<?= base_url('Hotel'); ?>">
-                <i class="ni ni-map-big text-primary"></i>
-                <span class="nav-link-text">Map Hotel</span>
+                <i class="ni ni-building text-primary"></i>
+                <span class="nav-link-text">Table Hotel</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->uri_string() == 'Pemetaan') { echo 'active'; } ?>" href="<?= base_url('Pemetaan'); ?>">
                 <i class="ni ni-pin-3 text-red"></i>
-                <span class="nav-link-text">Profile</span>
+                <span class="nav-link-text">Map Hotel</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tables.html">
+              <a class="nav-link <?php if($this->uri->uri_string() == 'Hotel/input') { echo 'active'; } ?>" href="<?= base_url('Hotel/input'); ?>">
                 <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Tables</span>
+                <span class="nav-link-text">Input Hotel</span>
               </a>
             </li>
             <li class="nav-item">

@@ -12,7 +12,7 @@ class Pemetaan extends CI_Controller
 
         );
         $this->load->view('templates/header', $data, False);
-        $this->load->view('home/pemetaan');
+        $this->load->view('pemetaan/pemetaan');
         $this->load->view('templates/footer');
     }
 }
