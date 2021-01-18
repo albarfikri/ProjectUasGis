@@ -9,7 +9,7 @@
                               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                   <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Input Hotel</li>
+                                  <li class="breadcrumb-item active" aria-current="page">Edit Hotel</li>
                               </ol>
                           </nav>
                       </div>
@@ -49,7 +49,7 @@
                       <div class="card-header bg-transparent">
                           <div class="row align-items-center">
                               <div class="col">
-                                  <h5 class="h3 mb-0">Input Data</h5>
+                                  <h5 class="h3 mb-0">Edit Data</h5>
                                   <h6 class="text-uppercase text-muted ls-1 mb-1">Hotel</h6>
 
                               </div>
@@ -64,31 +64,33 @@
                               <span aria-hidden="true">&times;</span>
                           </button>', '</div>');
                             //notifikasi jika berhasil menyimpan data
-                            if($this->session->flashdata('pesan')){
-                            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            if ($this->session->flashdata('pesan')) {
+                                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
                             <span class="alert-text"><strong>';
-                            echo $this->session->flashdata('pesan');
-                            echo '</strong></span>
+                                echo $this->session->flashdata('pesan');
+                                echo '</strong></span>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                            </button>','</div>';
+                            </button>', '</div>';
                             }
 
-                            echo form_open('hotel/input'); ?>
+                            echo form_open('hotel/edit/'.$hotel->id_hotel); ?>
                           <form>
                               <div class="form-group">
                                   <label for="example-text-input" class="form-control-label">Nama Hotel</label>
-                                  <input class="form-control" placeholder="Input nama hotel" type="text" value="<?= set_value('nama_hotel'); ?>" name="nama_hotel">
+                                  <strong>
+                                  <input class="form-control" type="text" value="<?= $hotel->nama_hotel ?>" name="nama_hotel">
+                                  </strong>
                               </div>
                               <div class="form-group">
                                   <label for="example-text-input" class="form-control-label">Alamat</label>
-                                  <input class="form-control" placeholder="Input alamat hotel" type="text" value="<?= set_value('alamat'); ?>" name="alamat">
+                                  <input class="form-control" placeholder="Input alamat hotel" type="text" value="<?= $hotel->alamat ?>" name="alamat">
                               </div>
                               <div class="form-group">
                                   <label for="example-text-input" class="form-control-label">Bintang Hotel</label>
                                   <select class="form-control" name="bintang">
-                                      <option>--Pilih bintang hotel--</option>
+                                      <option value="<?= $hotel->bintang ?>">~ <?= $hotel->bintang; ?> ~</option>
                                       <option value="5">5</option>
                                       <option value="4">4</option>
                                       <option value="3">3</option>
@@ -99,27 +101,27 @@
                               <div class="form-group">
                                   <label for="example-text-input" class="form-control-label">Status Hotel</label>
                                   <select class="form-control" name="status">
-                                      <option>--Pilih status hotel--</option>
+                                      <option value="<?= $hotel->status;?>">~ <?= $hotel->status; ?> ~</option>
                                       <option value="Negeri">Negeri</option>
                                       <option value="Swasta">Swasta</option>
                                   </select>
                               </div>
                               <div class="form-group">
                                   <label for="example-number-input" class="form-control-label">Latitude</label>
-                                  <input class="form-control" placeholder="Input latitude" type="text" value="<?= set_value('lat'); ?>" name="lat" id="Latitude">
+                                  <input class="form-control" placeholder="Input latitude" type="text" value="<?= $hotel->lat;?>" name="lat" id="Latitude">
                               </div>
                               <div class="form-group">
                                   <label for="example-number-input" class="form-control-label">Longitude</label>
-                                  <input class="form-control" placeholder="Input Longitude" type="text" value="<?= set_value('lon'); ?>" name="lon" id="Longitude">
+                                  <input class="form-control" placeholder="Input Longitude" type="text" value="<?= $hotel->lon;?>" name="lon" id="Longitude">
                               </div>
                               <div class="form-group">
                                   <label for="exampleFormControlTextarea1">Keterangan</label>
-                                  <textarea class="form-control" name="ket" value="<?= set_value('ket'); ?>" rows="3"></textarea>
+                                  <textarea class="form-control" name="ket" value="<?= $hotel->ket;?>" rows="3"><?= $hotel->ket; ?></textarea>
                               </div>
                               <div class="form-group">
 
                                   <labe></label>
-                                      <button type="submit" class="btn btn-primary  btn-lg btn-block" type="button">Simpan</button>
+                                      <button href="" type="submit" class="btn btn-primary  btn-lg btn-block">Edit</button>
 
                                       <button type="reset" class="btn btn-warning  btn-lg btn-block" type="button">Reset</button>
                               </div>
@@ -133,10 +135,10 @@
       <script>
           var curLocation = [0, 0];
           if (curLocation[0] == 0 && curLocation[1] == 0) {
-              curLocation = [0.510440, 101.438309];
+              curLocation = [<?= $hotel->lat;?>, <?= $hotel->lon;?>];
           }
 
-          var mymap = L.map('mapid').setView([0.510440, 101.438309], 15);
+          var mymap = L.map('mapid').setView([<?= $hotel->lat;?>, <?= $hotel->lon;?>], 15);
           L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
                   '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
