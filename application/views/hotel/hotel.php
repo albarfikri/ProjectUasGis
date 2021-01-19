@@ -53,6 +53,7 @@
                    <th scope="col" class="sort" data-sort="name">No</th>
                    <th scope="col" class="sort" data-sort="budget">Nama hotel</th>
                    <th scope="col" class="sort" data-sort="status">Alamat</th>
+                   <th scope="col" class="sort" data-sort="status">Gambar</th>
                    <th scope="col">Bintang</th>
                    <th scope="col" class="sort" data-sort="completion">Status</th>
                    <th scope="col" class="sort" data-sort="completion">Keterangan</th>
@@ -71,6 +72,9 @@
                      </td>
                      <td>
                        <?= $value->alamat; ?>
+                     </td>
+                     <td>
+                       <img src="<?= base_url('assets/images/Hotel/'.$value->gambar); ?>" width="240px">
                      </td>
                      <td>
                        <strong>

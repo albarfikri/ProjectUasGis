@@ -57,6 +57,7 @@ class Hotel extends CI_Controller
                 'bintang' => $this->input->post('bintang'),
                 'lat' => $this->input->post('lat'),
                 'lon' => $this->input->post('lon'),
+                'gambar' => $this->input->post('gambar'),
                 'ket' => $this->input->post('ket',)
             );
 
@@ -106,6 +107,7 @@ class Hotel extends CI_Controller
                 'bintang' => $this->input->post('bintang'),
                 'lat' => $this->input->post('lat'),
                 'lon' => $this->input->post('lon'),
+                'gambar' => $this->input->post('gambar'),
                 'ket' => $this->input->post('ket',)
             );
 

@@ -12,4 +12,4 @@
   <script src="<?= base_url('assets/assets/js/argon.js?v=1.2.0'); ?>"></script>
   </body>
 
-  </html>
+  </html>   

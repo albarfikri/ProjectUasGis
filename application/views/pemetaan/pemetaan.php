@@ -26,16 +26,98 @@
           <div class="row">
               <div class="col">
 
-                  <div id="mapid" style="width: stretch; height: 500px;"></div>
+                  <div id="mapid" style="width: stretch; height: 590px;"></div>
                   <script>
-                      var mymap = L.map('mapid').setView([0.510440, 101.438309], 15);
-
-                      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                      // Jenis Peta
+                      var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
                               'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                          id: 'mapbox/streets-v11',
-                        
-                      }).addTo(mymap);
+                          id: 'mapbox/streets-v11'
+                      });
+
+                      var peta2 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                          id: 'mapbox/satellite-v9'
+                      });
+
+
+                      var peta3 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      });
+
+                      var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                          id: 'mapbox/dark-v10'
+                      });
+
+                      var mymap = L.map('mapid', {
+                          center: [0.510440, 101.438309],
+                          zoom: 13,
+                          layers: [peta3]
+                      });
+
+                      var baseMaps = {
+                          "Street": peta3,
+                          "Light": peta1,
+                          "Satellite": peta2,
+                          "Dark": peta4
+                      };
+
+
+                      //Point
+                      <?php foreach ($hotel as $key => $value) { ?>
+                          var hotel = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(mymap). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+                      <?php } ?>
+
+                      // geojson
+                      var kota = L.layerGroup();
+                      var geo = $.getJSON("<?= base_url('json/pekanbaru.json') ?>", function(data) {
+                          geoLayer = L.geoJson(data, {
+                              style: function(feature) {
+                                  return {
+                                      opacity: 0.5,
+                                      color: 'gray',
+                                      fillopacity: 1.0,
+                                      fillcolor: 'blue',
+                                  }
+                              },
+                          }).addTo(kota);
+
+                      });
+
+                      var geoj = L.layerGroup([kota])
+                      var cities = L.layerGroup([hotel]);
+
+                      var overlayMaps = {
+                          "<strong>Cities</strong>": cities,
+                          "<strong>Poligon Pekanbaru</strong>": geoj
+                      };
+
+
+                      L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+
+                      //   var panelLayers = new L.Control.panelLayers(baseMaps, overlayMaps);
+                      //   mymap.addControl(panelLayers);
+                      
+                      //   var icon_hotel = L.icon({
+                      //       iconUrl:'<?= base_url('assets/icon/hotel.png') ?>',
+                      //       iconSize: [40,45],
+                      //   });
                   </script>
 
               </div>

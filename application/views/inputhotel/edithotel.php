@@ -115,6 +115,10 @@
                                   <input class="form-control" placeholder="Input Longitude" type="text" value="<?= $hotel->lon;?>" name="lon" id="Longitude">
                               </div>
                               <div class="form-group">
+                                  <label for="example-number-input" class="form-control-label">Gambar</label>
+                                  <input class="form-control" placeholder="Input Longitude" type="file" value="<?= $hotel->gambar;?>" name="gambar" id="gambar">
+                              </div>
+                              <div class="form-group">
                                   <label for="exampleFormControlTextarea1">Keterangan</label>
                                   <textarea class="form-control" name="ket" value="<?= $hotel->ket;?>" rows="3"><?= $hotel->ket; ?></textarea>
                               </div>

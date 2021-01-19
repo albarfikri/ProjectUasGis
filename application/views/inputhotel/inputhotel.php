@@ -113,6 +113,10 @@
                                   <input class="form-control" placeholder="Input Longitude" type="text" value="<?= set_value('lon'); ?>" name="lon" id="Longitude">
                               </div>
                               <div class="form-group">
+                                  <label for="example-number-input" class="form-control-label">Gambar</label>
+                                  <input class="form-control" placeholder="Input Longitude" type="file" value="<?= set_value('gambar'); ?>" name="gambar" id="gambar">
+                              </div>
+                              <div class="form-group">
                                   <label for="exampleFormControlTextarea1">Keterangan</label>
                                   <textarea class="form-control" name="ket" value="<?= set_value('ket'); ?>" rows="3"></textarea>
                               </div>
