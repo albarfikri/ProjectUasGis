@@ -37,8 +37,8 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="<?= base_url('landing'); ?>">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="<?= base_url('assetsL/about.html'); ?>">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="<?= base_url('assetsL/package.html'); ?>">Packages</a>
+              <!-- <li class="nav-item"><a class="nav-link" href="<?= base_url('assetsL/about.html'); ?>">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="<?= base_url('assetsL/package.html'); ?>">Packages</a> -->
 
             </ul>
 

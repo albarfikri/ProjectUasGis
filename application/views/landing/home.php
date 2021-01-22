@@ -4,7 +4,7 @@
 
     <div class="row align-items-center text-center text-md-left">
       <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-        <h1>Travel More To Discover Yourself</h1>
+        <h1>Tempat Pencarian Hotel Terbaik</h1>
         <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p>
         <a class="button button-hero mt-4" href="#">Get Started</a>
       </div>
@@ -22,8 +22,8 @@
   <div class="container">
     <div class="section-intro text-center pb-90px">
       <img class="section-intro-img" src="<?= base_url('assetsL/img/home/section-icon.png'); ?>" alt="">
-      <h2>Our Popular Services</h2>
-      <p>Fowl have fruit moveth male they are that place you will lesser</p>
+      <h2>Pelayanan terpopuler kami</h2>
+      <p>Pelayanan ini dipilih berdasarkan tingkat minat dari pengguna aplikasi Safario ini</p>
     </div>
 
     <div class="row">
@@ -34,7 +34,7 @@
           </div>
           <div class="service-card-body">
             <h3>Hotel Booking</h3>
-            <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+            <p>Setiap pengguna dapat melakukan booking dari 7 minggu yang lalu</p>
           </div>
         </div>
       </div>
@@ -44,8 +44,8 @@
             <img class="img-fluid" src="<?= base_url('assetsL/img/home/service2.png'); ?>" alt="">
           </div>
           <div class="service-card-body">
-            <h3>Flight Booking</h3>
-            <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+            <h3>Ease Of Access</h3>
+            <p>Call center yang aktif 24 jam akan selalu melayani pengguna secara profesional</p>
           </div>
         </div>
       </div>
@@ -55,8 +55,8 @@
             <img class="img-fluid" src="<?= base_url('assetsL/img/home/service3.png'); ?>" alt="">
           </div>
           <div class="service-card-body">
-            <h3>Destination Booking</h3>
-            <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+            <h3>Competitive Comparation</h3>
+            <p>Aplikasi yang telah mengunsung</p>
           </div>
         </div>
       </div>
@@ -91,13 +91,13 @@
     <div class="row">
       <div class="col-md-6">
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assetsL/img/home/tour1.png'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/6.Grand Jatra.jpeg'); ?>" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
-                <h4>Paris tour offer</h4>
-                <small>5 days offer</small>
-                <p>We proper guided our tourist</p>
+                <h4>Grand Jatra</h4>
+                <small>5 days discount Offer</small>
+                <p>Premium and comfy Hotel</p>
               </div>
               <div class="media-price">
                 <h4 class="text-primary">$65/day</h4>
@@ -111,23 +111,23 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="tour-content">
-              <h2>We offer worldwise tour plan recently</h2>
-              <p>Make she'd moved divided air. Whose tree that hath own upon them it multiply was blessed </p>
+              <h2>We offer wide range of Hotel</h2>
+              <p>Dibawah Ini ada beberapa rekomendasi hotel terlaris di Pekanbaru</p>
             </div>
           </div>
         </div>
 
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assetsL/img/home/tour2.png'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/7.Novotel.jpg'); ?>" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
-                <h4>Paris tour offer</h4>
-                <small>5 days offer</small>
-                <p>We proper guided our tourist</p>
+                <h4>Hotel Novotel</h4>
+                <small>5 days discount Offer</small>
+                <p>Premium and comfy Hotel</p>
               </div>
               <div class="media-price">
-                <h4 class="text-primary">$65/day</h4>
+                <h4 class="text-primary">450k/day</h4>
               </div>
             </div>
           </div>
@@ -138,16 +138,16 @@
     <div class="row">
       <div class="col-md-6 col-lg-7">
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assetsL/img/home/tour3.png'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/33. Angkasa Garden.jpg'); ?>" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
-                <h4>Paris tour offer</h4>
-                <small>5 days offer</small>
-                <p>We proper guided our tourist</p>
+                <h4>Hotel Angkasa Garden</h4>
+                <small>5 days discount offer</small>
+                <p>Premium and comfy Hotel</p>
               </div>
               <div class="media-price">
-                <h4 class="text-primary">$65/day</h4>
+                <h4 class="text-primary">550k/day</h4>
               </div>
             </div>
           </div>
@@ -155,16 +155,16 @@
       </div>
       <div class="col-md-6 col-lg-5">
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assetsL/img/home/tour4.png'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/38.Zuri.jpg'); ?>" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
-                <h4>Paris tour offer</h4>
-                <small>5 days offer</small>
-                <p>We proper guided our tourist</p>
+                <h4>Hotel Zuri</h4>
+                <small>5 days discount offer</small>
+                <p>Premium and comfy Hotel</p>
               </div>
               <div class="media-price">
-                <h4 class="text-primary">$65/day</h4>
+                <h4 class="text-primary">240k/day</h4>
               </div>
             </div>
           </div>
