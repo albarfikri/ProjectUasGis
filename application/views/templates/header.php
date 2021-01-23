@@ -346,7 +346,7 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="login" onclick="return confirm('Yakin, Ingin Logout ?')" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>

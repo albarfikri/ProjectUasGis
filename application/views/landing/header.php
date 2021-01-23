@@ -47,7 +47,7 @@
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-              <a class="button" href="<?= base_url('assetsL/#'); ?>">Login</a>
+              <a class="button" href="<?= base_url('Login'); ?>">Login</a>
             </div>
           </div>
         </div>
