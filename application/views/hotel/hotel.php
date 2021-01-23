@@ -74,7 +74,7 @@
                        <?= $value->alamat; ?>
                      </td>
                      <td>
-                       <img src="<?= base_url('assets/images/Hotel/'.$value->gambar); ?>" width="240px">
+                       <img src="<?= base_url('assets/images/Hotel/' . $value->gambar); ?>" width="240px">
                      </td>
                      <td>
                        <strong>

@@ -5,7 +5,7 @@
     <div class="row align-items-center text-center text-md-left">
       <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
         <h1>Tempat Pencarian Hotel Terbaik</h1>
-        <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p>
+        <p>Safario adalah aplikasi pencarian dan booking hotel terbaik di dunia yang mana perusahaan ini berlokasi di Rumbai Pekanbaru, saat menggunakan aplikasi ini kalian akan suguhkan berbagai pengalaman menarik yang belum pernah kalian rasakan sebelumnya, mulai dari promo dan harga menarik yang selalu ada</p>
         <a class="button button-hero mt-4" href="#">Get Started</a>
       </div>
       <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
@@ -56,7 +56,7 @@
           </div>
           <div class="service-card-body">
             <h3>Competitive Comparation</h3>
-            <p>Aplikasi yang telah mengunsung</p>
+            <p>Aplikasi yang telah mengunsung kemampuan untuk melakukan komparasi harga, kenyamanan dan keamanaan dari setiap hotel yang ada</p>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/6.Grand Jatra.jpeg'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assetsL/img/2.jpg'); ?>" height="560" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
@@ -118,7 +118,7 @@
         </div>
 
         <div class="tour-card">
-          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/7.Novotel.jpg'); ?>" alt="">
+          <img class="card-img rounded-0" src="<?= base_url('assets/images/Hotel/7.Novotel.jpg'); ?>" height="" alt="">
           <div class="tour-card-overlay">
             <div class="media">
               <div class="media-body">
@@ -182,7 +182,7 @@
     <div class="section-intro text-center pb-90px">
       <img class="section-intro-img" src="<?= base_url('assetsL/img/home/section-icon.png'); ?>" alt="">
       <h2>Our client says</h2>
-      <p>Fowl have fruit moveth male they are that place you will lesser</p>
+      <p>Beberapa Testimoni pengguna aplikasi Safario</p>
     </div>
 
 
@@ -191,14 +191,15 @@
         <div class="row">
           <div class="col-md-3 col-lg-2 align-self-center">
             <div class="testimonial__img">
-              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/t-slider1.png'); ?>" alt="">
+              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/testimonial3.png'); ?>" alt="">
+
             </div>
           </div>
           <div class="col-md-9 col-lg-10">
             <div class="testimonial__content mt-3 mt-sm-0">
-              <h3>Daniel heart</h3>
-              <p>Project manager, Nestle</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
+              <h3>M. Albar Fikri</h3>
+              <p>IT Programming Consultant</p>
+              <p class="testimonial__i">Banyak Pengalaman yang saya dapatkan setelah menggunakan aplikasi Safario, dimana kita dapat degan mudah membooking kamar, pelayanan yang sangat nyaman dan menarik serta promo yang selalu ditawarkan, satu hal lagi harga yang rama kualitas juga baik !</p>
               <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
             </div>
           </div>
@@ -208,14 +209,14 @@
         <div class="row">
           <div class="col-md-3 col-lg-2 align-self-center">
             <div class="testimonial__img">
-              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/t-slider1.png'); ?>" alt="">
+              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/testimonial2.png'); ?>" alt="">
             </div>
           </div>
           <div class="col-md-9 col-lg-10">
             <div class="testimonial__content mt-3 mt-sm-0">
-              <h3>Daniel heart</h3>
-              <p>Project manager, Nestle</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
+              <h3>Dwi Safitra</h3>
+              <p>Cloud Computing Expert</p>
+              <p class="testimonial__i">Banyak Pengalaman yang saya dapatkan setelah menggunakan aplikasi Safario, dimana kita dapat degan mudah membooking kamar, pelayanan yang sangat nyaman dan menarik serta promo yang selalu ditawarkan, satu hal lagi harga yang rama kualitas juga baik !</p>
               <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
             </div>
           </div>
@@ -225,14 +226,14 @@
         <div class="row">
           <div class="col-md-3 col-lg-2 align-self-center">
             <div class="testimonial__img">
-              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/t-slider1.png'); ?>" alt="">
+              <img class="card-img rounded-0" src="<?= base_url('assetsL/img/testimonial/testimonial1.png'); ?>" alt="">
             </div>
           </div>
           <div class="col-md-9 col-lg-10">
             <div class="testimonial__content mt-3 mt-sm-0">
-              <h3>Daniel heart</h3>
+              <h3>Farras Wibisana</h3>
               <p>Project manager, Nestle</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
+              <p class="testimonial__i">Banyak Pengalaman yang saya dapatkan setelah menggunakan aplikasi Safario, dimana kita dapat degan mudah membooking kamar, pelayanan yang sangat nyaman dan menarik serta promo yang selalu ditawarkan, satu hal lagi harga yang rama kualitas juga baik !</p>
               <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
             </div>
           </div>
