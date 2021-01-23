@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title><?=$title?></title>
+  <title><?= $title ?></title>
   <!-- Favicon -->
   <link rel="icon" href="<?= base_url('assets/assets/img/brand/favicon.png'); ?>" type="image/png">
   <!-- Fonts -->
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  
+
 </head>
 
 <body>
@@ -54,25 +54,33 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->uri_string() == 'Dashboard') { echo 'active'; } ?>" href="<?= base_url('Dashboard'); ?>">
+              <a class="nav-link <?php if ($this->uri->uri_string() == 'Dashboard') {
+                                    echo 'active';
+                                  } ?>" href="<?= base_url('Dashboard'); ?>">
                 <i class="ni ni-tv-2 text-default"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->uri_string() == 'Hotel') { echo 'active'; } ?>" href="<?= base_url('Hotel'); ?>">
+              <a class="nav-link <?php if ($this->uri->uri_string() == 'Hotel') {
+                                    echo 'active';
+                                  } ?>" href="<?= base_url('Hotel'); ?>">
                 <i class="ni ni-building text-primary"></i>
                 <span class="nav-link-text">Table Hotel</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->uri_string() == 'Pemetaan') { echo 'active'; } ?>" href="<?= base_url('Pemetaan'); ?>">
+              <a class="nav-link <?php if ($this->uri->uri_string() == 'Pemetaan') {
+                                    echo 'active';
+                                  } ?>" href="<?= base_url('Pemetaan'); ?>">
                 <i class="ni ni-pin-3 text-red"></i>
                 <span class="nav-link-text">Map Hotel</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->uri_string() == 'Hotel/input') { echo 'active'; } ?>" href="<?= base_url('Hotel/input'); ?>">
+              <a class="nav-link <?php if ($this->uri->uri_string() == 'Hotel/input') {
+                                    echo 'active';
+                                  } ?>" href="<?= base_url('Hotel/input'); ?>">
                 <i class="ni ni-bullet-list-67 text-default"></i>
                 <span class="nav-link-text">Input Hotel</span>
               </a>
@@ -349,4 +357,3 @@
       </div>
     </nav>
     <!-- Header -->
-   

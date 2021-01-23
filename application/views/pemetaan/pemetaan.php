@@ -113,7 +113,7 @@
 
                       //   var panelLayers = new L.Control.panelLayers(baseMaps, overlayMaps);
                       //   mymap.addControl(panelLayers);
-                      
+
                       //   var icon_hotel = L.icon({
                       //       iconUrl:'<?= base_url('assets/icon/hotel.png') ?>',
                       //       iconSize: [40,45],
