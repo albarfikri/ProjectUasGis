@@ -14,6 +14,11 @@ class Landing extends CI_Controller
         $data = array(
             'title' => 'Landing Page',
             'hotel' => $this->hotelmodel->tampil(),
+            'b1' => $this->hotelmodel->b1(),
+            'b2' => $this->hotelmodel->b2(),
+            'b3' => $this->hotelmodel->b3(),
+            'b4' => $this->hotelmodel->b4(),
+            'b5' => $this->hotelmodel->b5(),
             'isi' => 'Tampilan Landing Page'
 
         );

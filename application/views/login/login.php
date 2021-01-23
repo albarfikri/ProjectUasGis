@@ -48,7 +48,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="dashboard.html">
+              <a href="landing">
                 <img src="<?= base_url(); ?>assets/assets/img/brand/blue.png">
               </a>
             </div>
