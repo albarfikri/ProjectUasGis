@@ -322,23 +322,54 @@
                       var b3 = L.layerGroup();
                       var b4 = L.layerGroup();
                       var b5 = L.layerGroup();
+
+
+                      //icon point
+                      var b11 = L.icon({
+                          iconUrl: '<?= base_url('assets/icon/3.png'); ?>',
+                          iconSize: [23, 42],
+                          shadowSize: [50, 64],
+                          iconAnchor: [22, 94], 
+                          shadowAnchor: [4, 62],
+                          popupAnchor: [-3, -76]
+                      });
+                      var b12 = L.icon({
+                          iconUrl: '<?= base_url('assets/icon/2.png'); ?>',
+                          iconSize: [23, 42],
+                          shadowSize: [50, 64],
+                          iconAnchor: [22, 94], 
+                          shadowAnchor: [4, 62],
+                          popupAnchor: [-3, -76]
+                      });
+                      var b13 = L.icon({
+                          iconUrl: '<?= base_url('assets/icon/11.png'); ?>',
+                          iconSize: [32, 45],
+                          shadowSize: [50, 64],
+                          iconAnchor: [22, 94], 
+                          shadowAnchor: [4, 62],
+                          popupAnchor: [-3, -76]
+                      });
+                      var b14 = L.icon({
+                          iconUrl: '<?= base_url('assets/icon/4.png'); ?>',
+                          iconSize: [23, 42],
+                          shadowSize: [50, 64],
+                          iconAnchor: [22, 94], 
+                          shadowAnchor: [4, 62],
+                          popupAnchor: [-3, -76]
+                      });
+                      var b15 = L.icon({
+                          iconUrl: '<?= base_url('assets/icon/5.png'); ?>',
+                          iconSize: [23, 42],
+                          shadowSize: [50, 64],
+                          iconAnchor: [22, 94], 
+                          shadowAnchor: [4, 62],
+                          popupAnchor: [-3, -76]
+                      });
+
                       //Point
                       <?php foreach ($hotel as $key => $value) { ?>
-                        
-                        var hotel = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(Allhotel). //{icon:icon_hotel} letakan disebelah ],
-                        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                            "<tr><td></td><td></td><td></td></tr>" +
-                            "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                            "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                            "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                            "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                            "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                            "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-             
-                    <?php } ?>
-                      <?php foreach ($b1 as $key => $value) { ?>
-                        
-                          var hotel1 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(b1). //{icon:icon_hotel} letakan disebelah ],
+
+                          var hotel = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(Allhotel). //{icon:icon_hotel} letakan disebelah ],
                           bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
                               "<tr><td></td><td></td><td></td></tr>" +
                               "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
@@ -347,64 +378,87 @@
                               "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
                               "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
                               "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-               
+
+                      <?php } ?>
+                      <?php foreach ($b1 as $key => $value) { ?>
+
+                          var hotel1 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+                              icon: b11
+                          }).addTo(b1). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
                       <?php } ?>
 
                       <?php foreach ($b2 as $key => $value) { ?>
-                        
-                        var hotel2 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(b2). //{icon:icon_hotel} letakan disebelah ],
-                        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                            "<tr><td></td><td></td><td></td></tr>" +
-                            "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                            "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                            "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                            "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                            "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                            "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-             
-                    <?php } ?>
 
-                    <?php foreach ($b3 as $key => $value) { ?>
-                        
-                        var hotel3 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(b3). //{icon:icon_hotel} letakan disebelah ],
-                        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                            "<tr><td></td><td></td><td></td></tr>" +
-                            "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                            "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                            "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                            "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                            "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                            "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-             
-                    <?php } ?>
-                    <?php foreach ($b4 as $key => $value) { ?>
-                        
-                        var hotel4 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(b4). //{icon:icon_hotel} letakan disebelah ],
-                        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                            "<tr><td></td><td></td><td></td></tr>" +
-                            "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                            "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                            "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                            "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                            "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                            "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-             
-                    <?php } ?>
-                    <?php foreach ($b5 as $key => $value) { ?>
-                        
-                        var hotel5 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(b5). //{icon:icon_hotel} letakan disebelah ],
-                        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                            "<tr><td></td><td></td><td></td></tr>" +
-                            "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                            "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                            "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                            "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                            "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                            "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-             
-                    <?php } ?>
+                          var hotel2 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+                              icon: b12
+                          }).addTo(b2). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
 
-                  
+                      <?php } ?>
+
+                      <?php foreach ($b3 as $key => $value) { ?>
+
+                          var hotel3 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+                              icon: b13
+                          }).addTo(b3). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+                      <?php } ?>
+                      <?php foreach ($b4 as $key => $value) { ?>
+
+                          var hotel4 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+                              icon: b14
+                          }).addTo(b4). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+                      <?php } ?>
+                      <?php foreach ($b5 as $key => $value) { ?>
+
+                          var hotel5 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+                              icon: b15
+                          }).addTo(b5). //{icon:icon_hotel} letakan disebelah ],
+                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+                      <?php } ?>
+
+
                       var geoj = L.layerGroup([kota])
                       var testing = L.layerGroup([hotel])
                       var overlayMaps = {
