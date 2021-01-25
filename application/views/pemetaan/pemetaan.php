@@ -95,40 +95,61 @@
                       var b5 = L.layerGroup();
 
                       //Search Peta
-                    //   var mymap = new L.Map('mapid', {
-                    //       zoom: 10,
-                    //       center: new L.latLng(0.510440, 101.438309)
-                    //   }); //set center from first location
+                      // var mymap = new L.Map('mapid', {
+                      //     zoom: 10,
+                      //     center: new L.latLng(0.510440, 101.438309)
+                      // }); //set center from first location
 
-                    //   var data = [{
-                    //           <?php foreach ($hotel as $key => $value) { ?> "lokasi": [<?= $value->lat ?>, <?= $value->lon ?>],
-                    //               "nama_hotel": "<?= $value->nama_hotel ?>"
-                    //       },
-                    //   <?php } ?>
-                    //   ];
-                    //   var markersLayer = new L.LayerGroup(); //isi konten
+                      var data = [
+                          <?php foreach ($hotel as $key => $value) { ?> {
+                                  "gambar": "<?= $value->gambar ?>",
+                                  "address": "<?= $value->alamat ?>",
+                                  "bintang": "<?= $value->bintang ?>",
+                                  "status": "<?= $value->status ?>",
+                                  "lon": "<?= $value->lon ?>",
+                                  "lat": "<?= $value->lat ?>",
+                                  "alamat": [<?= $value->lat ?>, <?= $value->lon ?>],
+                                  "nama_hotel": "<?= $value->nama_hotel ?>"
+                              },
+                          <?php } ?>
+                      ];
 
-                    //   mymap.addLayer(markersLayer);
+                      var markersLayer = new L.LayerGroup(); //isi konten
 
-                    //   var controlSearch = new L.Control.Search({
-                    //       position: 'topright',
-                    //       layer: markersLayer,
-                    //       initial: false,
-                    //       zoom: 12,
-                    //       marker: false
-                    //   });
+                      mymap.addLayer(markersLayer);
 
-                    //   mymap.addControl(controlSearch);
+                      var controlSearch = new L.Control.Search({
+                          position: 'topright',
+                          layer: markersLayer,
+                          initial: false,
+                          zoom: 19,
+                          marker: false
+                      });
 
-                    //   for (i in data) {
-                    //       var nama_hotel = data[i].nama_hotel; //value searched
-                    //       var alamat = data[i].alamat; //position found
-                    //           marker = new L.Marker(new L.latLng(lokasi), {
-                    //               title: nama_hotel
-                    //           }); //se property searched
-                    //       marker.bindPopup('title: ' + marker);
-                    //       markersLayer.addLayer(marker);
-                    //   }
+                      mymap.addControl(controlSearch);
+
+                      for (i in data) {
+                          var nama_hotel = data[i].nama_hotel;
+                          var gambar = data[i].gambar;
+                          var address = data[i].address;
+                          var bintang = data[i].bintang; 
+                          var status = data[i].status; 
+                          var lon = data[i].lon; 
+                          var lat = data[i].lat; 
+                          var alamat = data[i].alamat; 
+                          var marker = new L.Marker(new L.latLng(alamat), {
+                              title: nama_hotel
+                          }); 
+                          marker.bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/'); ?>"+gambar+"' width='220x'></td></tr>" +
+                              "<tr><td></td><td></td><td></td></tr>" +
+                              "<tr><td>Nama</td><td>:</td><td>"+nama_hotel+"</td></tr>" +
+                              "<tr><td>Alamat</td><td>:</td><td>"+address+"</td></tr>" +
+                              "<tr><td>Bintang</td><td>:</td><td><strong>"+bintang+"</strong></td></tr>" +
+                              "<tr><td>Status</td><td>:</td><td><strong>"+status+"</strong></td></tr>" +
+                              "<tr><td>Longitude</td><td>:</td><td>"+lon+"</td></tr>" +
+                              "<tr><td>Latitude</td><td>:</td><td>"+lat+"</td></tr></table>");
+                          markersLayer.addLayer(marker);
+                      }
 
 
                       //icon point
@@ -268,14 +289,16 @@
 
                       var geoj = L.layerGroup([kota])
                       var testing = L.layerGroup([hotel])
+                      var marker = L.layerGroup([markersLayer])
                       var overlayMaps = {
-                          "<strong>All Hotel</strong>": Allhotel,
+                          "<strong>Search Point </strong>": marker,                   
                           "<strong>Bintang 1</strong>": b1,
                           "<strong>Bintang 2</strong>": b2,
                           "<strong>Bintang 3</strong>": b3,
                           "<strong>Bintang 4</strong>": b4,
                           "<strong>Bintang 5</strong>": b5,
                           "<strong>Poligon Pekanbaru</strong>": geoj
+
                       };
 
 

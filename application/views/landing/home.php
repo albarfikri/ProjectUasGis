@@ -257,233 +257,292 @@
   <div class="container">
     <div id="mapid" style="width: stretch; height: 620px;"></div>
     <script>
-                      // Jenis Peta
-                      var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                          id: 'mapbox/streets-v11'
-                      });
+      // Jenis Peta
+      var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11'
+      });
 
-                      var peta2 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                          id: 'mapbox/satellite-v9'
-                      });
-
-
-                      var peta3 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                      });
-
-                      var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-                          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                          id: 'mapbox/dark-v10'
-                      });
-
-                      var mymap = L.map('mapid', {
-                          center: [0.510440, 101.438309],
-                          zoom: 13,
-                          layers: [peta3]
-                      });
-
-                      var baseMaps = {
-                          "Street": peta3,
-                          "Light": peta1,
-                          "Satellite": peta2,
-                          "Dark": peta4
-                      };
-
-                      //Kategori
-                      var Kategorisasi = [];
-
-                      // geojson
-                      var kota = L.layerGroup();
-                      var geo = $.getJSON("<?= base_url('json/pekanbaru.json') ?>", function(data) {
-                          geoLayer = L.geoJson(data, {
-                              style: function(feature) {
-                                  return {
-                                      opacity: 0.5,
-                                      color: 'gray',
-                                      fillopacity: 1.0,
-                                      fillcolor: 'blue',
-                                  }
-                              },
-                          }).addTo(kota);
-
-                      });
-
-                      var Allhotel = L.layerGroup();
-                      var b1 = L.layerGroup();
-                      var b2 = L.layerGroup();
-                      var b3 = L.layerGroup();
-                      var b4 = L.layerGroup();
-                      var b5 = L.layerGroup();
+      var peta2 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/satellite-v9'
+      });
 
 
-                      //icon point
-                      var b11 = L.icon({
-                          iconUrl: '<?= base_url('assets/icon/3.png'); ?>',
-                          iconSize: [23, 42],
-                          shadowSize: [50, 64],
-                          iconAnchor: [22, 94], 
-                          shadowAnchor: [4, 62],
-                          popupAnchor: [-3, -76]
-                      });
-                      var b12 = L.icon({
-                          iconUrl: '<?= base_url('assets/icon/2.png'); ?>',
-                          iconSize: [23, 42],
-                          shadowSize: [50, 64],
-                          iconAnchor: [22, 94], 
-                          shadowAnchor: [4, 62],
-                          popupAnchor: [-3, -76]
-                      });
-                      var b13 = L.icon({
-                          iconUrl: '<?= base_url('assets/icon/11.png'); ?>',
-                          iconSize: [32, 45],
-                          shadowSize: [50, 64],
-                          iconAnchor: [22, 94], 
-                          shadowAnchor: [4, 62],
-                          popupAnchor: [-3, -76]
-                      });
-                      var b14 = L.icon({
-                          iconUrl: '<?= base_url('assets/icon/4.png'); ?>',
-                          iconSize: [23, 42],
-                          shadowSize: [50, 64],
-                          iconAnchor: [22, 94], 
-                          shadowAnchor: [4, 62],
-                          popupAnchor: [-3, -76]
-                      });
-                      var b15 = L.icon({
-                          iconUrl: '<?= base_url('assets/icon/5.png'); ?>',
-                          iconSize: [23, 42],
-                          shadowSize: [50, 64],
-                          iconAnchor: [22, 94], 
-                          shadowAnchor: [4, 62],
-                          popupAnchor: [-3, -76]
-                      });
+      var peta3 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      });
 
-                      //Point
-                      <?php foreach ($hotel as $key => $value) { ?>
+      var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/dark-v10'
+      });
 
-                          var hotel = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(Allhotel). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+      var mymap = L.map('mapid', {
+        center: [0.510440, 101.438309],
+        zoom: 13,
+        layers: [peta3]
+      });
 
-                      <?php } ?>
-                      <?php foreach ($b1 as $key => $value) { ?>
+      var baseMaps = {
+        "Street": peta3,
+        "Light": peta1,
+        "Satellite": peta2,
+        "Dark": peta4
+      };
 
-                          var hotel1 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
-                              icon: b11
-                          }).addTo(b1). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+      //Kategori
+      var Kategorisasi = [];
 
-                      <?php } ?>
+      // geojson
+      var kota = L.layerGroup();
+      var geo = $.getJSON("<?= base_url('json/pekanbaru.json') ?>", function(data) {
+        geoLayer = L.geoJson(data, {
+          style: function(feature) {
+            return {
+              opacity: 0.5,
+              color: 'gray',
+              fillopacity: 1.0,
+              fillcolor: 'blue',
+            }
+          },
+        }).addTo(kota);
 
-                      <?php foreach ($b2 as $key => $value) { ?>
+      });
 
-                          var hotel2 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
-                              icon: b12
-                          }).addTo(b2). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+      var Allhotel = L.layerGroup();
+      var b1 = L.layerGroup();
+      var b2 = L.layerGroup();
+      var b3 = L.layerGroup();
+      var b4 = L.layerGroup();
+      var b5 = L.layerGroup();
 
-                      <?php } ?>
+      //Search Peta
+      // var mymap = new L.Map('mapid', {
+      //     zoom: 10,
+      //     center: new L.latLng(0.510440, 101.438309)
+      // }); //set center from first location
 
-                      <?php foreach ($b3 as $key => $value) { ?>
+      var data = [
+        <?php foreach ($hotel as $key => $value) { ?> {
+            "gambar": "<?= $value->gambar ?>",
+            "address": "<?= $value->alamat ?>",
+            "bintang": "<?= $value->bintang ?>",
+            "status": "<?= $value->status ?>",
+            "lon": "<?= $value->lon ?>",
+            "lat": "<?= $value->lat ?>",
+            "alamat": [<?= $value->lat ?>, <?= $value->lon ?>],
+            "nama_hotel": "<?= $value->nama_hotel ?>"
+          },
+        <?php } ?>
+      ];
 
-                          var hotel3 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
-                              icon: b13
-                          }).addTo(b3). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+      var markersLayer = new L.LayerGroup(); //isi konten
 
-                      <?php } ?>
-                      <?php foreach ($b4 as $key => $value) { ?>
+      mymap.addLayer(markersLayer);
 
-                          var hotel4 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
-                              icon: b14
-                          }).addTo(b4). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+      var controlSearch = new L.Control.Search({
+        position: 'topright',
+        layer: markersLayer,
+        initial: false,
+        zoom: 19,
+        marker: false
+      });
 
-                      <?php } ?>
-                      <?php foreach ($b5 as $key => $value) { ?>
+      mymap.addControl(controlSearch);
 
-                          var hotel5 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
-                              icon: b15
-                          }).addTo(b5). //{icon:icon_hotel} letakan disebelah ],
-                          bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
-                              "<tr><td></td><td></td><td></td></tr>" +
-                              "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
-                              "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
-                              "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
-                              "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
-                              "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
-                              "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
-
-                      <?php } ?>
+      for (i in data) {
+        var nama_hotel = data[i].nama_hotel;
+        var gambar = data[i].gambar;
+        var address = data[i].address;
+        var bintang = data[i].bintang;
+        var status = data[i].status;
+        var lon = data[i].lon;
+        var lat = data[i].lat;
+        var alamat = data[i].alamat;
+        var marker = new L.Marker(new L.latLng(alamat), {
+          title: nama_hotel
+        });
+        marker.bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/'); ?>" + gambar + "' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td>" + nama_hotel + "</td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td>" + address + "</td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong>" + bintang + "</strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong>" + status + "</strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td>" + lon + "</td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td>" + lat + "</td></tr></table>");
+        markersLayer.addLayer(marker);
+      }
 
 
-                      var geoj = L.layerGroup([kota])
-                      var testing = L.layerGroup([hotel])
-                      var overlayMaps = {
-                          "<strong>All Hotel</strong>": Allhotel,
-                          "<strong>Bintang 1</strong>": b1,
-                          "<strong>Bintang 2</strong>": b2,
-                          "<strong>Bintang 3</strong>": b3,
-                          "<strong>Bintang 4</strong>": b4,
-                          "<strong>Bintang 5</strong>": b5,
-                          "<strong>Poligon Pekanbaru</strong>": geoj
-                      };
+      //icon point
+      var b11 = L.icon({
+        iconUrl: '<?= base_url('assets/icon/3.png'); ?>',
+        iconSize: [23, 42],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      });
+      var b12 = L.icon({
+        iconUrl: '<?= base_url('assets/icon/2.png'); ?>',
+        iconSize: [23, 42],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      });
+      var b13 = L.icon({
+        iconUrl: '<?= base_url('assets/icon/11.png'); ?>',
+        iconSize: [32, 45],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      });
+      var b14 = L.icon({
+        iconUrl: '<?= base_url('assets/icon/4.png'); ?>',
+        iconSize: [23, 42],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      });
+      var b15 = L.icon({
+        iconUrl: '<?= base_url('assets/icon/5.png'); ?>',
+        iconSize: [23, 42],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      });
+
+      //Point
+      <?php foreach ($hotel as $key => $value) { ?>
+
+        var hotel = L.marker([<?= $value->lat ?>, <?= $value->lon ?>]).addTo(Allhotel). //{icon:icon_hotel} letakan disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
+      <?php foreach ($b1 as $key => $value) { ?>
+
+        var hotel1 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+          icon: b11
+        }).addTo(b1). //{icon:icon_hotel} letak      an disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
+
+      <?php foreach ($b2 as $key => $value) { ?>
+
+        var hotel2 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+          icon: b12
+        }).addTo(b2). //{icon:icon_hotel} letakan disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
+
+      <?php foreach ($b3 as $key => $value) { ?>
+
+        var hotel3 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+          icon: b13
+        }).addTo(b3). //{icon:icon_hotel} letakan disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
+      <?php foreach ($b4 as $key => $value) { ?>
+
+        var hotel4 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+          icon: b14
+        }).addTo(b4). //{icon:icon_hotel} letakan disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
+      <?php foreach ($b5 as $key => $value) { ?>
+
+        var hotel5 = L.marker([<?= $value->lat ?>, <?= $value->lon ?>], {
+          icon: b15
+        }).addTo(b5). //{icon:icon_hotel} letakan disebelah ],
+        bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/' . $value->gambar); ?>' width='220x'></td></tr>" +
+          "<tr><td></td><td></td><td></td></tr>" +
+          "<tr><td>Nama</td><td>:</td><td><?= $value->nama_hotel ?></td></tr>" +
+          "<tr><td>Alamat</td><td>:</td><td><?= $value->alamat ?></td></tr>" +
+          "<tr><td>Bintang</td><td>:</td><td><strong><?= $value->bintang ?></strong></td></tr>" +
+          "<tr><td>Status</td><td>:</td><td><strong><?= $value->status ?></strong></td></tr>" +
+          "<tr><td>Longitude</td><td>:</td><td><?= $value->lon ?></td></tr>" +
+          "<tr><td>Latitude</td><td>:</td><td><?= $value->lat ?></td></tr></table>");
+
+      <?php } ?>
 
 
-                      L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+      var geoj = L.layerGroup([kota])
+      var testing = L.layerGroup([hotel])
+      var marker = L.layerGroup([markersLayer])
+      var overlayMaps = {
+        "<strong>Search Point </strong>": marker,
+        "<strong>Bintang 1</strong>": b1,
+        "<strong>Bintang 2</strong>": b2,
+        "<strong>Bintang 3</strong>": b3,
+        "<strong>Bintang 4</strong>": b4,
+        "<strong>Bintang 5</strong>": b5,
+        "<strong>Poligon Pekanbaru</strong>": geoj
+
+      };
+
+
+      L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 
 
 
-                      //   var panelLayers = new L.Control.panelLayers(baseMaps, overlayMaps);
-                      //   mymap.addControl(panelLayers);
+      //   var panelLayers = new L.Control.panelLayers(baseMaps, overlayMaps);
+      //   mymap.addControl(panelLayers);
 
-                      //   var icon_hotel = L.icon({
-                      //       iconUrl:'<?= base_url('assets/icon/hotel.png') ?>',
-                      //       iconSize: [40,45],
-                      //   });
-                  </script>
+      //   var icon_hotel = L.icon({
+      //       iconUrl:'<?= base_url('assets/icon/hotel.png') ?>',
+      //       iconSize: [40,45],
+      //   });
+    </script>
 
 
   </div>

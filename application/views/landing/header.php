@@ -22,6 +22,10 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
+   <!-- webgis search -->
+   <script src="<?= base_url('leaflet-search/src/leaflet-search.js') ?>"></script>
+  <link rel="stylesheet" href="<?= base_url('leaflet-search/src/leaflet-search.css')?>" />
+
 </head>
 
 <body class="bg-shape">
