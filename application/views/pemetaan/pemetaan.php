@@ -140,7 +140,7 @@
                           var marker = new L.Marker(new L.latLng(alamat), {
                               title: nama_hotel
                           }); 
-                          marker.bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/'); ?>"+gambar+"' width='220x'></td></tr>" +
+                          marker.bindPopup("<h3>Detail Hotel</h3><table><tr><td colspan='3'><img src='<?= base_url('assets/images/Hotel/'); ?>"+gambar+"' width='220px'></td></tr>" +
                               "<tr><td></td><td></td><td></td></tr>" +
                               "<tr><td>Nama</td><td>:</td><td>"+nama_hotel+"</td></tr>" +
                               "<tr><td>Alamat</td><td>:</td><td>"+address+"</td></tr>" +
